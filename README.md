@@ -24,14 +24,15 @@ Execute Django admin and create details for 10 books
 
 ## PROGRAM
 models.py
-from django.db import models
 
-class Car(models.Model):
-    brand = models.CharField(max_length=100)
-    model_name = models.CharField(max_length=100)
-    year = models.IntegerField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    available = models.BooleanField(default=True)
+    from django.db import models
+
+    class Car(models.Model):
+        brand = models.CharField(max_length=100)
+        model_name = models.CharField(max_length=100)
+        year = models.IntegerField()
+        price = models.DecimalField(max_digits=10, decimal_places=2)
+        available = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.brand} {self.model_name} ({self.year})"
